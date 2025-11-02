@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DF Fitness</title>
+  <style>
+    /* --- Basic Reset & Theme --- */
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; background: #111; color: #fff; }
+    a { color: inherit; }
+    h1,h2 { margin: 0 0 .5rem 0; }
+    section { padding: 2.5rem 1rem; max-width: 1100px; margin: 0 auto; }
+
+    /* --- Header / Navbar --- */
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(8px);
+             background: rgba(0,0,0,.7); border-bottom: 1px solid #222; }
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; padding: .8rem 1rem; max-width: 1100px; margin: 0 auto; }
+    .logo { display:flex; align-items:center; gap:.5rem; font-weight: 800; letter-spacing:.5px; }
+    nav a { margin: 0 .6rem; color: #bbb; text-decoration: none; font-size: .95rem; }
+    nav a:hover { color: #fff; }
+    .btn { background: #9BE15D; color: #111; padding: .6rem 1rem; border: none; cursor: pointer; border-radius: 10px; font-weight: 700; }
+    .btn-outline { border: 2px solid #9BE15D; background: transparent; color: #9BE15D; padding: .55rem 1rem; border-radius: 10px; font-weight: 700; }
+
+    /* --- Hero --- */
+    #hero { text-align: left; padding: 5rem 1rem; position: relative; overflow: hidden; }
+    .hero-bg { position:absolute; inset:0; background: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; z-index:-2; }
+    .hero-overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.85)); z-index:-1; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; }
+    .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.1; }
+    .accent { color: #9BE15D; }
+    .hero-text { color: #cfcfcf; max-width: 650px; margin-top: .8rem; }
+
+    /* --- Cards / Sections --- */
+    .grid { display: grid; gap: 1rem; }
+    .grid-3 { grid-template-columns: repeat(1, 1fr); }
+    @media (min-width: 800px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    .card { background: #1b1b1b; border: 1px solid #2a2a2a; border-radius: 14px; padding: 1rem; }
+    .card h3 { margin-bottom: .5rem; }
+    .muted { color: #bdbdbd; }
+    .highlight { border: 2px solid #9BE15D; }
+
+    /* --- Gallery --- */
+    .gallery { display: grid; grid-template-columns: repeat(1, 1fr); gap: .6rem; }
+    @media (min-width: 700px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+    .gallery img { width: 100%; height: 190px; object-fit: cover; border-radius: 12px; border: 1px solid #2a2a2a; }
+
+    /* --- Contact --- */
+    .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; color: #d2d2d2; }
+    .input, .textarea { width: 100%; background: #1b1b1b; border: 1px solid #333; color: #fff; border-radius: 10px; padding: .7rem .9rem; }
+    .textarea { min-height: 120px; resize: vertical; }
+
+    /* --- Footer --- */
+    footer { border-top: 1px solid #222; text-align: center; padding: 1.2rem; color: #999; background: #0b0b0b; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="nav-wrap">
+      <div class="logo">🏋️‍♂️ DF Fitness</div>
+      <nav>
+        <a href="#programs">Programs</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="btn" id="joinBtn">Join Now</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <h1 class="hero-title">Build Strength. <span class="accent">Own Your Day.</span></h1>
+      <p class="hero-text">Personalized coaching, smart programs, and a community that pushes you forward—online and in the gym.</p>
+      <div style="margin-top:1rem; display:flex; gap:.6rem; flex-wrap:wrap;">
+        <button class="btn" id="freeSessionBtn">Start Free Session</button>
+        <a class="btn-outline" href="#programs">See Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section id="programs">
+    <h2 style="font-size:2rem; margin-bottom:1rem;">Programs</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Dumbbell Shred</h3>
+        <p class="muted">Fat‑loss focused plan using only dumbbells—great for home or hotel gyms.</p>
+        <ul class="muted">
+          <li>4 days/week</li>
+          <li>30–40 min/session</li>
+          <li>Video form cues</li>
+        </ul>
+      </div>
+      <div class="card highlight">
+        <h3>Pro Strength Builder</h3>
+        <p class="muted">Progressive full‑gym program to increase compound lifts and muscle size.</p>
+        <ul class="muted">
+          <li>5 days/week</li>
+          <li>Periodized blocks</li>
+          <li>Coach feedback</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Athlete Move</h3>
+        <p class="muted">Hybrid plan for speed, power and conditioning with simple equipment.</p>
+        <ul class="muted">
+          <li>3–4 days/week</li>
+          <li>Sprints & circuits</li>
+          <li>Mobility add‑ons</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div style="display:flex; align-items:end; justify-content:space-between; margin-bottom:.6rem;">
+      <h2 style="font-size:2rem;">Gym & Dumbbell Gallery</h2>
+      <p class="muted" style="font-size:.9rem;">Swap these images with your own later.</p>
+    </div>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=900&auto=format&fit=crop" alt="Gym 1">
+      <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?q=80&w=900&auto=format&fit=crop" alt="Gym 2">
+      <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=900&auto=format&fit=crop" alt="Gym 3">
+      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=900&auto=format&fit=crop" alt="Gym 4">
+      <img src="https://images.unsplash.com/photo-1517964603305-11c0f6f66012?q=80&w=900&auto=format&fit=crop" alt="Gym 5">
+      <img src="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?q=80&w=900&auto=format&fit=crop" alt="Gym 6">
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <h2 style="font-size:2rem; margin-bottom:1rem;">Pricing</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Starter</h3>
+        <p class="muted">Best for beginners</p>
+        <p style="font-size:1.6rem; font-weight:900; margin:.3rem 0;">$19/mo</p>
+        <ul class="muted">
+          <li>2 programs</li>
+          <li>Email support</li>
+          <li>Progress tracker</li>
+        </ul>
+      </div>
+      <div class="card highlight">
+        <h3>Pro Coaching</h3>
+        <p class="muted">Most popular</p>
+        <p style="font-size:1.6rem; font-weight:900; margin:.3rem 0;">$49/mo</p>
+        <ul class="muted">
+          <li>All programs</li>
+          <li>Weekly check‑ins</li>
+          <li>Form reviews</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Elite 1:1</h3>
+        <p class="muted">For serious goals</p>
+        <p style="font-size:1.6rem; font-weight:900; margin:.3rem 0;">$149/mo</p>
+        <ul class="muted">
+          <li>Custom plan</li>
+          <li>24h chat support</li>
+          <li>Monthly calls</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="grid" style="grid-template-columns: 1fr; gap: 1rem;">
+      <div>
+        <h2 style="font-size:2rem; margin-bottom:.6rem;">Contact</h2>
+        <p class="muted" style="margin-bottom:1rem;">Have questions or want a custom plan? Message me and I’ll reply quickly.</p>
+        <ul class="contact-list">
+          <li>📞 +251 9X XXX XXXX</li>
+          <li>✉️ lonestorecompany@gmail.com</li>
+          <li>📍 Addis Ababa, Ethiopia</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:.6rem;">Send a Message</h3>
+        <form onsubmit="event.preventDefault(); alert('Thanks! I will contact you soon.');">
+          <input class="input" placeholder="Full name">
+          <div style="height: .6rem;"></div>
+          <input class="input" placeholder="Email or phone">
+          <div style="height: .6rem;"></div>
+          <textarea class="textarea" placeholder="Your message"></textarea>
+          <div style="height: .8rem;"></div>
+          <button class="btn" type="submit" style="width:100%;">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> DF Fitness. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript inside the same file
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('joinBtn').addEventListener('click', () => {
+      alert('Thanks for joining DF Fitness!');
+    });
+    document.getElementById('freeSessionBtn').addEventListener('click', () => {
+      location.hash = '#programs';
+    });
+  </script>
+</body>
+</html>
